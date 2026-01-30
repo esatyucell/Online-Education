@@ -174,3 +174,4 @@ C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.API\bin\Debug\net9.0\Swashbuckle
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.API\obj\Debug\net9.0\OnlineEdu.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.API\obj\Debug\net9.0\OnlineEdu.API.sourcelink.json

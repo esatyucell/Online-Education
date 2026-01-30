@@ -15,3 +15,4 @@ C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Business\obj\Debug\net9.0\Online
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Business\obj\Debug\net9.0\refint\OnlineEdu.Business.dll
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Business\obj\Debug\net9.0\OnlineEdu.Business.pdb
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Business\obj\Debug\net9.0\ref\OnlineEdu.Business.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Business\obj\Debug\net9.0\OnlineEdu.Business.sourcelink.json

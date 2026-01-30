@@ -13,3 +13,4 @@ C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DTO\obj\Debug\net9.0\OnlineEdu.D
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DTO\obj\Debug\net9.0\refint\OnlineEdu.DTO.dll
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DTO\obj\Debug\net9.0\OnlineEdu.DTO.pdb
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DTO\obj\Debug\net9.0\ref\OnlineEdu.DTO.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DTO\obj\Debug\net9.0\OnlineEdu.DTO.sourcelink.json

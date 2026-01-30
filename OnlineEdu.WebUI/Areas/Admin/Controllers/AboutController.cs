@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.DTOs.AboutDTOs;
+using OnlineEdu.WebUI.Helpers;
 
 namespace OnlineEdu.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("[area]/[controller]/[action]/{id?}")]
-    public class AboutController(HttpClient _client) : Controller
+    public class AboutController : Controller
     {
-        
-        public IActionResult Index()
+       private readonly HttpClient _client = HttpClientInstance.CreateClient();
+        public async Task<IActionResult> Index()
         {
-            _client.BaseAddress = new Uri("https://localhost:7154/api/");
-            var values = _client.GetFromJsonAsync<List<ResultAboutDTO>>("abouts");
-            return View();
+            
+            var values = await _client.GetFromJsonAsync<List<ResultAboutDTO>>("abouts");
+            return View(values);
         }
     }
 }

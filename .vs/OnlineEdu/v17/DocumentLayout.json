@@ -7,24 +7,24 @@
       "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\areas\\admin\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\wwwroot\\matrix-admin-master\\pages-gallery.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\wwwroot\\matrix-admin-master\\pages-gallery.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\dtos\\bannerdtos\\createbannerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\dtos\\bannerdtos\\createbannerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\dtos\\bannerdtos\\updatebannerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\dtos\\bannerdtos\\updatebannerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|c:\\users\\esat2\\source\\repos\\onlineedu\\onlineedu.webui\\helpers\\httpclientinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94CE2C19-82D7-4765-8561-8276E6C5598D}|OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj|solutionrelative:onlineedu.webui\\helpers\\httpclientinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,28 +38,28 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "OnlineEdu.WebUI\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAADgBAAAAAAAAAAAQwEcBAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-30T09:21:26.875Z",
+              "DocumentIndex": 4,
+              "Title": "UpdateBannerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\DTOs\\BannerDTOs\\UpdateBannerDTO.cs",
+              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\DTOs\\BannerDTOs\\UpdateBannerDTO.cs",
+              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\DTOs\\BannerDTOs\\UpdateBannerDTO.cs",
+              "RelativeToolTip": "OnlineEdu.WebUI\\DTOs\\BannerDTOs\\UpdateBannerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T12:03:41.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "pages-gallery.html",
-              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\wwwroot\\matrix-admin-master\\pages-gallery.html",
-              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\wwwroot\\matrix-admin-master\\pages-gallery.html",
-              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\wwwroot\\matrix-admin-master\\pages-gallery.html",
-              "RelativeToolTip": "OnlineEdu.WebUI\\wwwroot\\matrix-admin-master\\pages-gallery.html",
-              "ViewState": "AgIAABsCAAAAAAAAAAAgwDoCAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-01-30T07:42:03.604Z",
+              "DocumentIndex": 3,
+              "Title": "CreateBannerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\DTOs\\BannerDTOs\\CreateBannerDTO.cs",
+              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\DTOs\\BannerDTOs\\CreateBannerDTO.cs",
+              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\DTOs\\BannerDTOs\\CreateBannerDTO.cs",
+              "RelativeToolTip": "OnlineEdu.WebUI\\DTOs\\BannerDTOs\\CreateBannerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T12:03:29.879Z",
               "EditorCaption": ""
             },
             {
@@ -70,49 +70,48 @@
               "RelativeDocumentMoniker": "OnlineEdu.WebUI\\Areas\\Admin\\Views\\About\\Index.cshtml",
               "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Areas\\Admin\\Views\\About\\Index.cshtml",
               "RelativeToolTip": "OnlineEdu.WebUI\\Areas\\Admin\\Views\\About\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-30T07:41:35.834Z",
+              "WhenOpened": "2026-01-30T10:38:55.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "OnlineEdu.WebUI\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-30T10:36:27.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AboutController.cs",
               "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Areas\\Admin\\Controllers\\AboutController.cs",
               "RelativeDocumentMoniker": "OnlineEdu.WebUI\\Areas\\Admin\\Controllers\\AboutController.cs",
               "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Areas\\Admin\\Controllers\\AboutController.cs",
               "RelativeToolTip": "OnlineEdu.WebUI\\Areas\\Admin\\Controllers\\AboutController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T07:32:35.54Z",
+              "WhenOpened": "2026-01-30T10:30:36.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Program.cs",
-              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\Program.cs",
-              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Program.cs",
-              "RelativeToolTip": "OnlineEdu.WebUI\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Title": "HttpClientInstance.cs",
+              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Helpers\\HttpClientInstance.cs",
+              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\Helpers\\HttpClientInstance.cs",
+              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\Helpers\\HttpClientInstance.cs",
+              "RelativeToolTip": "OnlineEdu.WebUI\\Helpers\\HttpClientInstance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T07:31:20.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ScaffoldingReadMe.txt",
-              "DocumentMoniker": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\ScaffoldingReadMe.txt",
-              "RelativeDocumentMoniker": "OnlineEdu.WebUI\\ScaffoldingReadMe.txt",
-              "ToolTip": "C:\\Users\\esat2\\source\\repos\\OnlineEdu\\OnlineEdu.WebUI\\ScaffoldingReadMe.txt",
-              "RelativeToolTip": "OnlineEdu.WebUI\\ScaffoldingReadMe.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-30T07:30:31.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T10:26:07.974Z"
             }
           ]
         }

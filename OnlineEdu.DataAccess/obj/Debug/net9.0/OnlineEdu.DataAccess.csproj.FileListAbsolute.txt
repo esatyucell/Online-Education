@@ -13,3 +13,4 @@ C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\Onli
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\refint\OnlineEdu.DataAccess.dll
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.pdb
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\ref\OnlineEdu.DataAccess.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.sourcelink.json

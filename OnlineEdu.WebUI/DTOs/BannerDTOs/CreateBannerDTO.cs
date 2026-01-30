@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineEdu.WebUI.DTOs.BannerDTOs
 {
-{
+
     public class CreateBannerDTO
     {
         public string Title { get; set; }

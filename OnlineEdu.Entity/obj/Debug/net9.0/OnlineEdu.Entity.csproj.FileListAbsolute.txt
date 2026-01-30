@@ -12,3 +12,4 @@ C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\refint\O
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.pdb
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.genruntimeconfig.cache
 C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\ref\OnlineEdu.Entity.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.sourcelink.json
