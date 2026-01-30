@@ -1,0 +1,14 @@
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\bin\Debug\net9.0\OnlineEdu.Entity.deps.json
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\bin\Debug\net9.0\OnlineEdu.Entity.runtimeconfig.json
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\bin\Debug\net9.0\OnlineEdu.Entity.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\bin\Debug\net9.0\OnlineEdu.Entity.pdb
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.csproj.AssemblyReference.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.AssemblyInfoInputs.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.AssemblyInfo.cs
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.csproj.CoreCompileInputs.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\refint\OnlineEdu.Entity.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.pdb
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\OnlineEdu.Entity.genruntimeconfig.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.Entity\obj\Debug\net9.0\ref\OnlineEdu.Entity.dll

@@ -1,0 +1,15 @@
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net9.0\OnlineEdu.DataAccess.deps.json
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net9.0\OnlineEdu.DataAccess.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net9.0\OnlineEdu.DataAccess.pdb
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net9.0\OnlineEdu.Entity.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net9.0\OnlineEdu.Entity.pdb
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.csproj.AssemblyReference.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.AssemblyInfoInputs.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.AssemblyInfo.cs
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEd.EAC0992C.Up2Date
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\refint\OnlineEdu.DataAccess.dll
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\OnlineEdu.DataAccess.pdb
+C:\Users\esat2\source\repos\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net9.0\ref\OnlineEdu.DataAccess.dll
