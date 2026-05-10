@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class MessageManager<T>(IRepository<Message> _repository) : GenericManager<Message>(_repository), IMessageService
+    public class MessageManager(IRepository<Message> _repository) : GenericManager<Message>(_repository), IMessageService
     {
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Abstract
 {
-    public interface ISubscrşberService : IGenericService<Subscriber>
+    public interface ISubscriberService : IGenericService<Subscriber>
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class SubscriberManager<T>(IRepository<Subscriber> _repository) : GenericManager<Subscriber>(_repository), ISubscrşberService
+    public class SubscriberManager(IRepository<Subscriber> _repository) : GenericManager<Subscriber>(_repository), ISubscriberService
     {
     }
 }

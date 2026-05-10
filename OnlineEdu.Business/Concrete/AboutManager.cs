@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class AboutManager<T>(IRepository<About> _repository) : GenericManager<About>(_repository), IAboutService
+    public class AboutManager(IRepository<About> _repository) : GenericManager<About>(_repository), IAboutService
     {
     }
 }

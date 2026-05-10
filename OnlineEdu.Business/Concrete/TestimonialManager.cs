@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class TestimonialManager<T>(IRepository<Testimonial> _repository) : GenericManager<Testimonial>(_repository), ITestikmonialService
+    public class TestimonialManager(IRepository<Testimonial> _repository) : GenericManager<Testimonial>(_repository), ITestimonialService
     {
     }
 }

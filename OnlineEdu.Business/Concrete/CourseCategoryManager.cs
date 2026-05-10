@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class CourseCategoryManager<T>(IRepository<CourseCategory> _repository) : GenericManager<CourseCategory>(_repository), ICourseCategoryService
+    public class CourseCategoryManager(IRepository<CourseCategory> _repository) : GenericManager<CourseCategory>(_repository), ICourseCategoryService
     {
     }
 }

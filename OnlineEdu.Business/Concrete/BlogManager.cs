@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class BlogManager<T>(IRepository<Blog> _repository) : GenericManager<Blog>(_repository), IBlogService
+    public class BlogManager(IRepository<Blog> _repository) : GenericManager<Blog>(_repository), IBlogService
     {
     }
 }

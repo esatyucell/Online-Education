@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class BannerManager<T>(IRepository<Banner> _repository) : GenericManager<Banner>(_repository), IBannerService
+    public class BannerManager(IRepository<Banner> _repository) : GenericManager<Banner>(_repository), IBannerService
     {
     }
 }

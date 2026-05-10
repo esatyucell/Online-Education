@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Abstract
 {
-    public interface ITestikmonialService : IGenericService<Testimonial>
+    public interface ITestimonialService : IGenericService<Testimonial>
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class SocialMediaManager<T>(IRepository<SocialMedia> _repository) : GenericManager<SocialMedia>(_repository), ISocialMediaService
+    public class SocialMediaManager(IRepository<SocialMedia> _repository) : GenericManager<SocialMedia>(_repository), ISocialMediaService
     {
     }
 }
