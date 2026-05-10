@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OnlineEdu.DTO.DTOs.CourseCategoryDTOs
 {
-    public class UpdateCourseCategory
+    public class UpdateCourseCategoryDTO
     {
         public int CourseCategoryId { get; set; }
         public string Name { get; set; }
