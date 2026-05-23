@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineEdu.WebUI.DTOs.AboutDTOs;
+using OnlineEdu.WebUI.Helpers;
 
 namespace OnlineEdu.WebUI.Areas.Admin.Controllers
 {
@@ -8,9 +10,17 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
 
     public class AboutController : Controller
     {
-        public IActionResult Index()
+        private readonly HttpClient _client;
+
+        public AboutController(IHttpClientFactory clientFactory)
         {
-            return View();
+            _client = clientFactory.CreateClient("EduClient");
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var values = await _client.GetFromJsonAsync<List<ResultAboutDTO>>("abouts");
+            return View(values);
         }
     }
 }

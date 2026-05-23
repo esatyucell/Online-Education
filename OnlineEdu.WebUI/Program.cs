@@ -1,7 +1,22 @@
+using System.Net.Http.Headers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddHttpClient("EduClient", cfg =>
+{
+   
+    cfg.BaseAddress = new Uri("https://localhost:7005/api/");
+    
+
+});
+
+
+
 
 var app = builder.Build();
 

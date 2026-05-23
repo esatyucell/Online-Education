@@ -1,4 +1,6 @@
-﻿namespace OnlineEdu.WebUI.DTOs.BlogCategoryDTOs
+﻿using OnlineEdu.WebUI.DTOs.BlogDTOs;
+
+namespace OnlineEdu.WebUI.DTOs.BlogCategoryDTOs
 {
     public class ResultBlogCategoryDTO
     {
