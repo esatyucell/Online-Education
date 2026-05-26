@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OnlineEdu.WebUI.DTOs.ContactSTOs
+﻿namespace OnlineEdu.WebUI.DTOs.ContactDTOs
 {
-    public class CreateContactDTO
+    public class ResultContactDTO
     {
+        public int ContactId { get; set; }
 
         public string MapUrl { get; set; }
 

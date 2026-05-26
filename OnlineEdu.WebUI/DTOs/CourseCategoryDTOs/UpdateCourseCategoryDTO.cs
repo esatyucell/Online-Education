@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnlineEdu.DTO.DTOs.CourseCategoryDTOs
+namespace OnlineEdu.WebUI.DTOs.CourseCategoryDTOs
 {
     public class UpdateCourseCategoryDTO
     {

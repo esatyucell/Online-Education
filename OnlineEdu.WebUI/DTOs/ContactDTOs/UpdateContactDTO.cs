@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnlineEdu.WebUI.DTOs.ContactSTOs
+namespace OnlineEdu.WebUI.DTOs.ContactDTOs
 {
     public class UpdateContactDTO
     {
