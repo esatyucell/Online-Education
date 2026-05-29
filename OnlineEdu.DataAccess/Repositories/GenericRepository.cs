@@ -8,9 +8,17 @@ using System.Text;
 
 namespace OnlineEdu.DataAccess.Repositories
 {
-    public class GenericRepository<T>(OnlineEduContext _context) : IRepository<T> where T : class
+    public class GenericRepository<T> : IRepository<T> where T : class
     {
-        DbSet<T> Table { get => _context.Set<T>(); }
+        protected readonly OnlineEduContext _context;
+
+        public GenericRepository(OnlineEduContext context)
+        {
+            _context = context;
+        }
+
+        public DbSet<T> Table { get => _context.Set<T>(); }
+
         public int Count()
         {
             return Table.Count();

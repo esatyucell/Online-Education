@@ -1,4 +1,4 @@
-# 🎓 OnlineEdu - Çevrimiçi Eğitim Platformu
+# 🎓 OnlineEducation - Çevrimiçi Eğitim Platformu
 
 OnlineEdu, modern yazılım mimarisi standartlarına uygun olarak geliştirilmiş, API tabanlı ve çok katmanlı (N-Tier) bir çevrimiçi eğitim ve içerik yönetim sistemidir. Proje, yönetim (Admin) panelinden kurs, kategori ve blog işlemlerinin tam operasyonel olarak yönetilebilmesini sağlar.
 
@@ -33,7 +33,7 @@ Proje, **Code-First** yaklaşımıyla tasarlanmış ve gevşek bağlılığı (L
 
 ## 🚀 Teknolojiler ve Araçlar
 
-* **Backend:** .NET 8 / ASP.NET Core Web API & MVC
+* **Backend:** .NET 10 / ASP.NET Core Web API & MVC / N-Tier Architecture
 * **ORM / Veritabanı:** Entity Framework Core, MS SQL Server (Code-First Migration)
 * **Eşleme / Haberleşme:** AutoMapper, IHttpClientFactory (RESTful API Consumption)
 * **Front-End / UI:** Razor HTML, CSS, JavaScript, Bootstrap, SweetAlert2
