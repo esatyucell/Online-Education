@@ -4,7 +4,9 @@ using System.Text;
 
 namespace OnlineEdu.DataAccess.Abstract
 {
-    internal class ICourseCategoryRepository
+    public interface ICourseCategoryRepository
     {
+        void ShowOnHome(int id);
+        void DontShowOnHome(int id);
     }
 }

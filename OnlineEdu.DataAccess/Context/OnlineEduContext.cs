@@ -27,6 +27,8 @@ namespace OnlineEdu.DataAccess.Context
 
         public DbSet<CourseCategory> CourseCategories { get; set; }
 
+        public DbSet<CourseRegister> CourseRegisters { get; set; }
+
         public DbSet<Message> Messages { get; set; }
 
         public DbSet<SocialMedia> SocialMedias { get; set; }

@@ -1,10 +1,16 @@
-﻿using System;
+﻿using OnlineEdu.Entity;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace OnlineEdu.DataAccess.Abstract
 {
-    internal class ICourseRepository
+    public interface ICourseRepository
     {
+        List<Course> GetAllCoursesWithCategories();
+        List<Course> GetAllCoursesWithCategories(Expression<Func<Course, bool>> filter = null);
+        void ShowOnHome(int id);
+        void DontShowOnHome(int id);
     }
 }
