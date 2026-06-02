@@ -7,7 +7,11 @@ using System.Text;
 
 namespace OnlineEdu.Business.Concrete
 {
-    public class BlogCategoryManager(IRepository<BlogCategory> _repository) : GenericManager<BlogCategory>(_repository), IBlogCategoryService
+    public class BlogCategoryManager(IBlogCategoryRepository _repository) : GenericManager<BlogCategory>(_repository), IBlogCategoryService
     {
+        public List<BlogCategory> TGetCategoriesWithBlogs()
+        {
+            return _repository.GetCategoriesWithBlogs();
+        }
     }
 }

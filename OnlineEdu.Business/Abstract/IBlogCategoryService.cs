@@ -8,5 +8,6 @@ namespace OnlineEdu.Business.Abstract
 {
     public interface IBlogCategoryService : IGenericService<BlogCategory>
     {
+        List<BlogCategory> TGetCategoriesWithBlogs();
     }
 }
