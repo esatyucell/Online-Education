@@ -6,7 +6,7 @@ using System.Text;
 
 namespace OnlineEdu.DataAccess.Abstract
 {
-    public interface ICourseRepository
+    public interface ICourseRepository : IRepository<Course>
     {
         List<Course> GetAllCoursesWithCategories();
         List<Course> GetAllCoursesWithCategories(Expression<Func<Course, bool>> filter = null);
