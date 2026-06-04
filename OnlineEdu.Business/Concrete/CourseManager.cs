@@ -19,12 +19,12 @@ namespace OnlineEdu.Business.Concrete
             _repository.ShowOnHome(id);
         }
 
-        public List<Course> TGetAllCıursesWithCategories()
+        public List<Course> TGetAllCoursesWithCategories()
         {
             return _repository.GetAllCoursesWithCategories();
         }
 
-        public List<Course> TGetAllCıursesWithCategories(Expression<Func<Course, bool>> filter = null)
+        public List<Course> TGetAllCoursesWithCategories(Expression<Func<Course, bool>> filter = null)
         {
             return _repository.GetAllCoursesWithCategories(filter);
         }

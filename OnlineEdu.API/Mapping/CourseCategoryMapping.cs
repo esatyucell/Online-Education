@@ -9,6 +9,7 @@ namespace OnlineEdu.API.Mapping
         public CourseCategoryMapping() {
             CreateMap<CreateCourseCategoryDTO, CourseCategory>().ReverseMap();
             CreateMap<UpdateCourseCategoryDTO, CourseCategory>().ReverseMap();
+            CreateMap<ResultCourseCategoryDTO, CourseCategory>().ReverseMap();
         }
     }
 }

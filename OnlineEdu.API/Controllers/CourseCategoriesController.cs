@@ -55,5 +55,37 @@ namespace OnlineEdu.API.Controllers
             _courseCategoryService.TUpdate(values);
             return Ok("Kurs Kategorisi Başarıyla Güncellendi !");
         }
+
+        [HttpGet("ShowOnHome/{id}")]
+
+        public IActionResult ShowOnHome(int id)
+        {
+            _courseCategoryService.TShowOnHome(id);
+            return Ok("Ana Sayfada Gösteriliyor");
+        }
+
+        [HttpGet("DontShowOnHome/{id}")]
+
+        public IActionResult DontShowOnHome(int id)
+        {
+            _courseCategoryService.TDontShowOnHome(id);
+            return Ok("Ana Sayfada Gösterilmiyor");
+        }
+
+        [HttpGet("GetActiveCategories")]
+
+        public IActionResult GetActiveCategories()
+        {
+            var values = _courseCategoryService.TGetFilteredList(x => x.IsShown == true);
+            return Ok(values);
+        }
+
+        [HttpGet("GetCourseCategoryCount")]
+        public IActionResult GetCourseCategoryCount()
+        {
+            var courseCount = _courseCategoryService.TCount();
+            return Ok(courseCount);
+        }
+
     }
 }

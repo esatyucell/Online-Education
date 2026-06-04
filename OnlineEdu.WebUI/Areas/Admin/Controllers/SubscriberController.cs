@@ -17,7 +17,7 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var values = await _client.GetFromJsonAsync<List<ResultSubscriberDTO>>("subscribes");
+            var values = await _client.GetFromJsonAsync<List<ResultSubscriberDTO>>("subscribers");
             return View(values);
         }
 

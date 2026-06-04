@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OnlineEdu.Business.Abstract; 
 using OnlineEdu.Business.Concrete;
+using OnlineEdu.DataAccess.Abstract;
+using OnlineEdu.DataAccess.Concrete;
 
 namespace OnlineEdu.API.Extensions
 
@@ -20,6 +22,14 @@ namespace OnlineEdu.API.Extensions
             services.AddScoped(typeof(ISocialMediaService), typeof(SocialMediaManager));
             services.AddScoped(typeof(ISubscriberService), typeof(SubscriberManager));
             services.AddScoped(typeof(ITestimonialService), typeof(TestimonialManager));
+
+
+
+
+            services.AddScoped<IBlogCategoryRepository, BlogCategoryRepository>();
+            services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<ICourseCategoryRepository, CourseCategoryRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
         }
     }
 }

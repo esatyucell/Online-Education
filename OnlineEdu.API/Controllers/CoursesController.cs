@@ -14,8 +14,9 @@ namespace OnlineEdu.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var values = _courseService.TGetList();
-            return Ok(values);
+            var values = _courseService.TGetAllCoursesWithCategories();
+            var courses = _mapper.Map<List<ResultCourseDTO>>(values);
+            return Ok(courses);
         }
         [HttpGet("{id}")]
         public IActionResult GetById(int id) { 
@@ -40,5 +41,46 @@ namespace OnlineEdu.API.Controllers
             _courseService.TUpdate(values);
             return Ok("Kurs Başarıyla Güncellendi !");
         }
+
+        [HttpGet("ShowOnHome/{id}")]
+
+        public IActionResult ShowOnHome(int id)
+        {
+            _courseService.TShowOnHome(id);
+            return Ok("Ana Sayfada Gösteriliyor");
+        }
+
+        [HttpGet("DontShowOnHome/{id}")]
+
+        public IActionResult DontShowOnHome(int id)
+        {
+            _courseService.TDontShowOnHome(id);
+            return Ok("Ana Sayfada Gösterilmiyor");
+        }
+
+        [HttpGet("GetActiveCourses")]
+
+        public IActionResult GetAllActiveCourses()
+        {
+            var values = _courseService.TGetFilteredList(x => x.IsShown == true);
+            return Ok(values);
+        }
+
+        [HttpGet("GetCourseCount")]
+
+        public IActionResult GetCourseCount()
+        {
+            var courseCount = _courseService.TCount();
+            return Ok(courseCount);
+        }
+
+        [HttpGet("GetCoursesByCategoryId/{id}")]
+
+        public IActionResult GetCoursesByCategoryId(int id)
+        {
+            var values = _courseService.TGetAllCoursesWithCategories(x => x.CategoryId == id);
+            return Ok(values);
+        }
+
     }
 }

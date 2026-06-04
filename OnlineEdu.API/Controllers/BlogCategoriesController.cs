@@ -14,7 +14,7 @@ namespace OnlineEdu.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var values = _blogCategoryService.TGetList();
+            var values = _blogCategoryService.TGetCategoriesWithBlogs();
             return Ok(values);
         }
 

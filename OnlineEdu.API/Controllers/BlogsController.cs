@@ -15,8 +15,34 @@ namespace OnlineEdu.API.Controllers
 
         public IActionResult Get()
         {
-            var values = _blogService.TGetList();
-            return Ok(values);
+            var values = _blogService.TGetBlogsWithCategories();
+            var blogs = _mapper.Map<List<ResultBlogDTO>>(values);
+            return Ok(blogs);   
+        }
+
+        [HttpGet("GetLast4Blogs")]
+
+        public IActionResult GetLast4Blogs()
+        {
+            var values = _blogService.TGetLast4BlogsWithCategories();
+            var blogs = _mapper.Map<List<ResultBlogDTO>>(values);
+            return Ok(blogs);
+        }
+
+        [HttpGet("GetBlogsByCategoryId/{id}")]
+
+        public IActionResult GetBlogsByCategoryId(int id)
+        {
+            var blogs = _blogService.TGetBlogsByCategoryId(id);
+            return Ok(blogs);
+
+        }
+
+        [HttpGet("GetBlogCount")]
+        public IActionResult GetBlogCount()
+        {
+            var blogCount = _blogService.TCount();
+            return Ok(blogCount);
         }
 
         [HttpGet("{id}")]

@@ -9,7 +9,7 @@ namespace OnlineEdu.API.Mapping
         public CourseMapping() {
             CreateMap<CreateCourseDTO, Course>().ReverseMap();
             CreateMap<UpdateCourseDTO, Course>().ReverseMap();
-
+            CreateMap<ResultCourseDTO, Course>().ReverseMap();
         }
     }
 }
