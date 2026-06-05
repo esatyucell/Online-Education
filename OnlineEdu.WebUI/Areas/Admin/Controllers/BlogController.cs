@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
 using OnlineEdu.WebUI.DTOs.BlogDTOs;
 using OnlineEdu.WebUI.Helpers;
 
@@ -14,6 +16,21 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
         {
             _client = clientFactory.CreateClient("EduClient");
         }
+
+        public async Task CategoryDropdown()
+        {
+
+            var categoryList = await _client.GetFromJsonAsync<List<ResultBlogCategoryDTO>>("blogcategories");
+
+            List<SelectListItem> categories = (from x in categoryList
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Name,
+                                                   Value = x.BlogCategoryId.ToString()
+                                               }).ToList();
+            ViewBag.categories = categories;
+        }
+
         public async Task<IActionResult> Index()
         {
             var values = await _client.GetFromJsonAsync<List<ResultBlogDTO>>("blogs");
@@ -26,10 +43,13 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult CreateBlog()
+        [HttpGet]
+        public async Task<IActionResult> CreateBlog()
         {
+            await CategoryDropdown();
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateBlog(CreateBlogDTO createBlogDTO)
         {
