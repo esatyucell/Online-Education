@@ -42,6 +42,7 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
         public async Task<IActionResult> CreateCourse()
         {
             await CourseCategoryDropdown();

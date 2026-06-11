@@ -78,7 +78,7 @@ namespace OnlineEdu.API.Controllers
 
         public IActionResult GetCoursesByCategoryId(int id)
         {
-            var values = _courseService.TGetAllCoursesWithCategories(x => x.CategoryId == id);
+            var values = _courseService.TGetAllCoursesWithCategories(x => x.CourseCategoryId == id);
             return Ok(values);
         }
 
