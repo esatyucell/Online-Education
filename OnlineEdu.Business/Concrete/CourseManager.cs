@@ -1,6 +1,8 @@
 ﻿using OnlineEdu.Business.Abstract;
 using OnlineEdu.DataAccess.Abstract;
+using OnlineEdu.DataAccess.Concrete;
 using OnlineEdu.Entity;
+using OnlineEdu.Entity.CustomModels;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -29,8 +31,10 @@ namespace OnlineEdu.Business.Concrete
             return _repository.GetAllCoursesWithCategories(filter);
         }
 
-
-
+        public List<MonthlyCourseCount> TGetMonthlyCourseCounts()
+        {
+            return _repository.GetMonthlyCourseCounts();
+        }
 
     }
 }

@@ -15,6 +15,9 @@ namespace OnlineEdu.Entity
         public int CourseCategoryId { get; set; }
 
         public CourseCategory CourseCategory { get; set; }
+
+        public DateTime CourseCreatedDate { get; set; }
+
         public decimal Price { get; set; }
 
         public bool IsShown { get; set; }

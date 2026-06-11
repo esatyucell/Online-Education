@@ -1,4 +1,6 @@
-﻿using OnlineEdu.Entity;
+﻿using OnlineEdu.DTO.DTOs.CourseDTOs;
+using OnlineEdu.Entity;
+using OnlineEdu.Entity.CustomModels;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -10,7 +12,10 @@ namespace OnlineEdu.DataAccess.Abstract
     {
         List<Course> GetAllCoursesWithCategories();
         List<Course> GetAllCoursesWithCategories(Expression<Func<Course, bool>> filter = null);
+
         void ShowOnHome(int id);
         void DontShowOnHome(int id);
+
+        List<MonthlyCourseCount> GetMonthlyCourseCounts();
     }
 }

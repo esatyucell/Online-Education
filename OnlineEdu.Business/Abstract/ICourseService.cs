@@ -1,4 +1,5 @@
 ﻿using OnlineEdu.Entity;
+using OnlineEdu.Entity.CustomModels;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -14,6 +15,8 @@ namespace OnlineEdu.Business.Abstract
         List<Course> TGetAllCoursesWithCategories();
 
         List<Course> TGetAllCoursesWithCategories(Expression<Func<Course, bool>> filter = null);
-       
+
+        List<MonthlyCourseCount> TGetMonthlyCourseCounts();
+
     }
 }

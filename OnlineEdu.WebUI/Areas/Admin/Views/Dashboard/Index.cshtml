@@ -4,59 +4,72 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
-@{
-    int count = 0;
-}
-
-
 <style>
-    /* Sadece bu sayfadaki kartlara özel modern tasarım kuralları */
+    /* MEVCUT KODUN: Sadece bu sayfadaki kartlara özel modern tasarım kuralları */
     .modern-stat-card {
-        border-radius: 20px !important; /* Yumuşak ve modern köşeler */
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important; /* Derinlik katan hafif gölge */
-        transition: all 0.4s ease !important; /* Yağ gibi akan animasyon süresi */
+        border-radius: 20px !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        transition: all 0.4s ease !important;
         border: none !important;
         overflow: hidden;
     }
 
-    /* Kartın üzerine fareyle gelince çalışacak efektler */
-    .modern-stat-card:hover {
-        transform: translateY(-8px) !important; /* Kartı 8 piksel yukarı kaldır */
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important; /* Gölgeyi belirginleştir */
-    }
+        .modern-stat-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+        }
 
-    .modern-stat-card .inner {
-        padding: 25px !important;
-    }
+        .modern-stat-card .inner {
+            padding: 25px !important;
+        }
 
-    .modern-stat-card h3 {
-        font-weight: 800 !important;
-        font-size: 2.8rem !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Rakamlara 3D havası veren gölge */
-    }
+        .modern-stat-card h3 {
+            font-weight: 800 !important;
+            font-size: 2.8rem !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
 
-    .modern-stat-card p {
-        font-weight: 600;
-        font-size: 1.1rem;
-        letter-spacing: 1px; /* Harflerin arasını hafifçe açar */
-    }
+        .modern-stat-card p {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
 
-    /* Arka plandaki dev ikonun tasarımı */
-    .modern-stat-card .icon > i {
-        font-size: 4.5rem !important;
-        opacity: 0.25 !important; /* İkonu yarı saydam yapıp arka plana gömer */
+        .modern-stat-card .icon > i {
+            font-size: 4.5rem !important;
+            opacity: 0.25 !important;
+            transition: all 0.4s ease;
+        }
+
+        .modern-stat-card:hover .icon > i {
+            transform: scale(1.3) rotate(15deg);
+            opacity: 0.4 !important;
+        }
+
+    /* YENİ KOD: Grafiğin kart tasarımı için senin stiline uygun modern dokunuşlar */
+    .modern-chart-card {
+        border-radius: 20px !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        border: none !important;
+        background-color: #ffffff;
+        padding: 20px;
         transition: all 0.4s ease;
     }
 
-    /* Üzerine gelince ikonu döndür ve büyüt */
-    .modern-stat-card:hover .icon > i {
-        transform: scale(1.3) rotate(15deg); 
-        opacity: 0.4 !important;
+        .modern-chart-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+        }
+
+    .modern-chart-header {
+        font-weight: 700;
+        color: #1e3c72; /* İlk kartının lacivert temasına uygun başlık rengi */
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
     }
 </style>
 
-<div class="row mt-4"> <div class="col-lg-3 col-6">
+<div class="row mt-4">
+    <div class="col-lg-3 col-6">
         <div class="small-box modern-stat-card" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white;">
             <div class="inner">
                 <h3>@Model.CourseCount</h3>
@@ -75,9 +88,79 @@
                 <p>TOPLAM BLOG</p>
             </div>
             <div class="icon">
-                <i class="fas fa-book-open"></i> 
+                <i class="fas fa-book-open"></i>
             </div>
         </div>
     </div>
-
 </div>
+
+<div class="row mt-4">
+    <div class="col-lg-8 col-12">
+        <div class="card modern-chart-card">
+            <div class="card-body">
+                <h5 class="modern-chart-header">
+                    <i class="fas fa-chart-line mr-2"></i> Aylık Kurs Yayınlama Analizi
+                </h5>
+                <canvas id="courseLineChart" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const chartLabels = @Html.Raw(ViewBag.ChartLabels ?? "[]");
+    const chartData = @Html.Raw(ViewBag.ChartData ?? "[]");
+
+    const ctx = document.getElementById('courseLineChart').getContext('2d');
+
+    // Şık bir gradient oluştur (Çizginin altını doldurmak için - Senin temanla uyumlu)
+    let gradientFill = ctx.createLinearGradient(0, 0, 0, 300);
+    gradientFill.addColorStop(0, 'rgba(42, 82, 152, 0.5)'); // Senin lacivert tonun
+    gradientFill.addColorStop(1, 'rgba(255, 255, 255, 0)');  // Aşağıya doğru şeffaflaşır
+
+    new Chart(ctx, {
+    type: 'line',
+    data: {
+    labels: chartLabels,
+    datasets: [{
+    label: 'Eklenen Kurs Sayısı',
+    data: chartData,
+    borderColor: '#1e3c72',       // Çizgi rengi (Kart-1 ile aynı lacivert)
+    backgroundColor: gradientFill, // Gradient dolgu
+    borderWidth: 4,               // Kalın ve tok bir çizgi
+    pointBackgroundColor: '#38ef7d', // Noktaların içi yeşil (Kart-2 ile aynı)
+    pointBorderColor: '#ffffff',
+    pointBorderWidth: 2,
+    pointRadius: 5,
+    pointHoverRadius: 7,
+    tension: 0.4,                  // Akıcı kıvrımlar
+    fill: true
+    }]
+    },
+    options: {
+    responsive: true,
+    plugins: {
+    legend: {
+    display: false // Efsaneyi gizleyip daha temiz ve minimalist bir görüntü elde ettik
+    }
+    },
+    scales: {
+    x: {
+    grid: {
+    display: false // X eksenindeki dikey çizgileri kaldırarak modernleştirdik
+    }
+    },
+    y: {
+    beginAtZero: true,
+    ticks: {
+    stepSize: 1
+    },
+    border: {
+    dash: [5, 5] // Y eksenindeki yatay çizgileri kesik kesik şık bir hale getirdik
+    }
+    }
+    }
+    }
+    });
+</script>
