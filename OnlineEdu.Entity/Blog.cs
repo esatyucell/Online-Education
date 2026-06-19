@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineEdu.Entity.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,6 +18,10 @@ namespace OnlineEdu.Entity
         public int BlogCategoryId { get; set; }
 
         public virtual BlogCategory BlogCategory { get; set; }
+
+        public int? WriterId { get; set; }
+        public virtual AppUser Writer { get; set; }
+
     }
 }
 
