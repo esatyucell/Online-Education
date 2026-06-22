@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
+using OnlineEdu.WebUI.Helpers;
+using OnlineEdu.WebUI.Models;
 
 namespace OnlineEdu.WebUI.ViewComponents.Blog
 {
