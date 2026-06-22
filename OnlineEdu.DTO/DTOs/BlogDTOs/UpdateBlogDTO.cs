@@ -1,4 +1,5 @@
 ﻿using OnlineEdu.Entity;
+using OnlineEdu.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,8 @@ namespace OnlineEdu.DTO.DTOs.BlogDTOs
 
         public int BlogCategoryId { get; set; }
 
+        public int WriterId { get; set; }
+        
 
     }
 }

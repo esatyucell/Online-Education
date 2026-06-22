@@ -1,4 +1,5 @@
 ﻿using OnlineEdu.DTO.DTOs.BlogCategoryDTOs;
+using OnlineEdu.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +15,10 @@ namespace OnlineEdu.DTO.DTOs.BlogDTOs
         public DateTime BlogDate { get; set; }
         public int BlogCategoryId { get; set; }
         public ResultBlogCategoryDTO BlogCategory { get; set; }
-        
+
+        public int WriterId { get; set; }
+        public AppUser Writer { get; set; }
+
+
     }
 }
