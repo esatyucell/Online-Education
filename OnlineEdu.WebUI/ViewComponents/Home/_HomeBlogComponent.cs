@@ -1,21 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.DTOs.BannerDTOs;
+using OnlineEdu.WebUI.DTOs.BlogDTOs;
 
 namespace OnlineEdu.WebUI.ViewComponents.Home
 {
-    public class _HomeBannerComponent : ViewComponent
+    public class _HomeBlogComponent : ViewComponent
     {
         private readonly HttpClient _client;
 
-        public _HomeBannerComponent (IHttpClientFactory clientFactory)
+        public _HomeBlogComponent (IHttpClientFactory clientFactory)
         {
             _client = clientFactory.CreateClient("EduClient");
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var banner = await _client.GetFromJsonAsync<List<ResultBannerDTO>>("banners");
-            return View(banner);
+            var blog = await _client.GetFromJsonAsync<List<ResultBlogDTO>>("blogs/GetLast4Blogs");
+            return View(blog);
         }
     }
 }
