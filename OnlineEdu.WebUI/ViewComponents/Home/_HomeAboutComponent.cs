@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using OnlineEdu.WebUI.DTOs.AboutDTOs;
+
+namespace OnlineEdu.WebUI.ViewComponents.Home
+{
+    public class _HomeAboutComponent : ViewComponent
+    {
+        private readonly HttpClient _client; 
+
+        public _HomeAboutComponent (IHttpClientFactory clientFactory)
+        {
+            _client = clientFactory.CreateClient("EduCliet");
+        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var about = await _client.GetFromJsonAsync<List<ResultAboutDTO>>("abouts");
+            return View(about);
+        }
+    }
+}

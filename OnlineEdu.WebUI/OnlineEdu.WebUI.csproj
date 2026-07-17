@@ -14,6 +14,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\CourseRegister\" />
+    <Folder Include="ViewComponents\Home\" />
   </ItemGroup>
 
   <ItemGroup>
