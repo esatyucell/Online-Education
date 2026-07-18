@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Abstract;
@@ -26,6 +27,8 @@ namespace OnlineEdu.API.Controllers
             _subscriberService.TDelete(id);
             return Ok("Abone Başarıyla Silindi!");
         }
+        [AllowAnonymous]
+
         [HttpPost]
         public IActionResult Create(CreateSubscriberDTO _createSubscriberDTO)
         {

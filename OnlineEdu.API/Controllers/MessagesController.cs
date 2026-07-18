@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Abstract;
@@ -31,6 +32,7 @@ namespace OnlineEdu.API.Controllers
             _messageService.TDelete(id);
             return Ok("Mesaj Başarıyla Silindi !");
         }
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Create(CreateMessageDTO createMessageDTO) {
             var newValues = _mapper.Map<Message>(createMessageDTO);
