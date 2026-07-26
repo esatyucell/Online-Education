@@ -9,7 +9,7 @@ namespace OnlineEdu.WebUI.ViewComponents.Home
 
         public _HomeAboutComponent (IHttpClientFactory clientFactory)
         {
-            _client = clientFactory.CreateClient("EduCliet");
+            _client = clientFactory.CreateClient("EduClient");
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {

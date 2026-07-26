@@ -1,0 +1,21 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using OnlineEdu.WebUI.DTOs.SocialMediaDTOs;
+
+namespace OnlineEdu.WebUI.ViewComponents.UILayout
+{
+    public class _UILayoutHeaderSocialMediaComponent : ViewComponent
+    {
+        private readonly HttpClient _client;
+
+        public _UILayoutHeaderSocialMediaComponent(IHttpClientFactory clientFactory)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var values = await _client.GetFromJsonAsync<List<ResultSocialMediaDTO>>("socialmedias");
+            return View(values);
+        }
+    }
+}
