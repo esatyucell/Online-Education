@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace OnlineEdu.DTO.DTOs.UserDTOs
+{
+    public class UserLoginDTO
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+}
