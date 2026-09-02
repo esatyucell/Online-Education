@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OnlineEdu.DTO.DTOs.UserDTOs
 {
-    internal class UserRoleDTO
+    public class UserRoleDTO
     {
         public string RoleName { get; set; }
     }
