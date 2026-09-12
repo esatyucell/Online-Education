@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineEdu.DTO.DTOs.RoleDTOs
 {
-    public class CreateRoleDto
+    public class CreateRoleDTO
     {
         public string Name { get; set; }
     }
