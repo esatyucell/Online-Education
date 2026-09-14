@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineEdu.DTO.DTOs.RoleDTOs
+namespace OnlineEdu.WebUI.DTOs.RoleDTOs
 {
     public class CreateRoleDTO
     {

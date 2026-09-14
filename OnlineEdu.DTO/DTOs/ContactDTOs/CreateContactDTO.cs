@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnlineEdu.DTO.DTOs.ContactSTOs
+namespace OnlineEdu.DTO.DTOs.ContactDTOs
 {
-    public class UpdateContactDTO
+    public class CreateContactDTO
     {
-        public int ContactId { get; set; }
 
         public string MapUrl { get; set; }
 

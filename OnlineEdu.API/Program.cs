@@ -5,8 +5,12 @@ using OnlineEdu.Business.Concrete;
 using OnlineEdu.DataAccess.Abstract;
 using OnlineEdu.DataAccess.Context;
 using OnlineEdu.DataAccess.Repositories;
+using OnlineEdu.Entity.Entities;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
+using OnlineEdu.Entity.Entities;
+using OnlineEdu.DataAccess.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +27,8 @@ builder.Services.AddDbContext<OnlineEduContext>(options =>
 
 builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
-
+builder.Services.AddIdentity<AppUser, AppRole>()
+    .AddEntityFrameworkStores<OnlineEduContext>();
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

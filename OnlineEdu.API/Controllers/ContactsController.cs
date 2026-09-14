@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Abstract;
-using OnlineEdu.DTO.DTOs.ContactSTOs;
+using OnlineEdu.DTO.DTOs.ContactDTOs;
 using OnlineEdu.Entity;
 
 namespace OnlineEdu.API.Controllers
