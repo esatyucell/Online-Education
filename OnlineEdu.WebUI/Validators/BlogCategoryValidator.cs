@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using OnlineEdu.WebUI.DTOs.BlogCategoryDtos;
+using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
 
 namespace OnlineEdu.WebUI.Validators
 {
-    public class BlogCategoryValidator: AbstractValidator<CreateBlogCategoryDto>
+    public class BlogCategoryValidator: AbstractValidator<CreateBlogCategoryDTO>
     {
         public BlogCategoryValidator()
         {

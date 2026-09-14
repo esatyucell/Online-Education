@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OnlineEdu.WebUI.DTOs.UserDTOs
 {
@@ -13,7 +10,7 @@ namespace OnlineEdu.WebUI.DTOs.UserDTOs
         public string Email { get; set; }
         public string Password { get; set; }
 
-        [Compare("Password", ErrorMessage = "Şifreler birbiri ile uyumlu değil")]
+        [Compare("Password",ErrorMessage ="Şifreler birbiri ile uyumlu değil")]
         public string ConfirmPassword { get; set; }
     }
 }

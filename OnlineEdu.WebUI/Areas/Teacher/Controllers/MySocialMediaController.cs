@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using OnlineEdu.WebUI.DTOs.TeacherSocialDtos;
+using OnlineEdu.WebUI.DTOs.TeacherSocialDTOs;
 using OnlineEdu.WebUI.Services.TokenServices;
 
 namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
@@ -20,7 +20,7 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = _tokenService.GetUserId;
-            var values = await _client.GetFromJsonAsync<List<ResultTeacherSocialDto>>("teacherSocials/byTeacherId/"+userId);
+            var values = await _client.GetFromJsonAsync<List<ResultTeacherSocialDTO>>("teacherSocials/byTeacherId/"+userId);
             return View(values);
         }
 
@@ -38,7 +38,7 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTeacherSocial(CreateTeacherSocialDto createTeacherSocialDto)
+        public async Task<IActionResult> CreateTeacherSocial(CreateTeacherSocialDTO createTeacherSocialDto)
         {
             var userId = _tokenService.GetUserId;
             createTeacherSocialDto.TeacherId = userId;
@@ -50,12 +50,12 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         public async Task<IActionResult> UpdateTeacherSocial(int id)
         {
 
-            var value = await _client.GetFromJsonAsync<UpdateTeacherSocialDto>("teacherSocials/" + id);
+            var value = await _client.GetFromJsonAsync<UpdateTeacherSocialDTO>("teacherSocials/" + id);
             return View(value);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateTeacherSocial(UpdateTeacherSocialDto updateTeacherSocialDto)
+        public async Task<IActionResult> UpdateTeacherSocial(UpdateTeacherSocialDTO updateTeacherSocialDto)
         {
             await _client.PutAsJsonAsync("teacherSocials", updateTeacherSocialDto);
             return RedirectToAction("Index");

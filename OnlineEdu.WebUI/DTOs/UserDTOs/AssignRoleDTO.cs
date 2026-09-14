@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OnlineEdu.WebUI.DTOs.UserDTOs
+﻿namespace OnlineEdu.WebUI.DTOs.UserDTOs
 {
     public class AssignRoleDTO
     {

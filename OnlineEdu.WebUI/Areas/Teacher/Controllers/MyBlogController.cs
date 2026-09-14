@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OnlineEdu.WebUI.DTOs.BlogCategoryDtos;
-using OnlineEdu.WebUI.DTOs.BlogDtos;
+using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
+using OnlineEdu.WebUI.DTOs.BlogDTOs;
 using OnlineEdu.WebUI.Services.TokenServices;
 
 namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
@@ -22,13 +22,13 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         public async Task<IActionResult> Index()
         {
              var userId = _tokenService.GetUserId;
-            var values = await _client.GetFromJsonAsync<List<ResultBlogDto>>("blogs/GetBlogByWriterId/"+userId);
+            var values = await _client.GetFromJsonAsync<List<ResultBlogDTO>>("blogs/GetBlogByWriterId/"+userId);
             return View(values);
         }
 
         public async Task BlogCategoryDropDownAsync()
         {
-            var categoryList = await _client.GetFromJsonAsync<List<ResultBlogCategoryDto>>("blogCategories");
+            var categoryList = await _client.GetFromJsonAsync<List<ResultBlogCategoryDTO>>("blogCategories");
 
             List<SelectListItem> categories = (from x in categoryList
                                                select new SelectListItem
@@ -46,7 +46,7 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateBlog(CreateBlogDto createBlogDto)
+        public async Task<IActionResult> CreateBlog(CreateBlogDTO createBlogDto)
         {
             var userId = _tokenService.GetUserId;
             createBlogDto.WriterId = userId;
@@ -57,12 +57,12 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         public async Task<IActionResult> UpdateBlog(int id)
         {
             await BlogCategoryDropDownAsync();
-            var value = await _client.GetFromJsonAsync<UpdateBlogDto>("blogs/" + id);
+            var value = await _client.GetFromJsonAsync<UpdateBlogDTO>("blogs/" + id);
             return View(value);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateBlog(UpdateBlogDto updateBlogDto)
+        public async Task<IActionResult> UpdateBlog(UpdateBlogDTO updateBlogDto)
         {
             await _client.PutAsJsonAsync("blogs", updateBlogDto);
             return RedirectToAction("Index");

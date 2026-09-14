@@ -1,8 +1,5 @@
 ﻿using OnlineEdu.WebUI.DTOs.CourseDTOs;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnlineEdu.WebUI.DTOs.CourseRegisterDTOs
 {

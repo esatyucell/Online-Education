@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OnlineEdu.WebUI.DTOs.CourseCategoryDtos;
-using OnlineEdu.WebUI.DTOs.CourseDtos;
-using OnlineEdu.WebUI.DTOs.CourseVideoDtos;
+using OnlineEdu.WebUI.DTOs.CourseCategoryDTOs;
+using OnlineEdu.WebUI.DTOs.CourseDTOs;
+using OnlineEdu.WebUI.DTOs.CourseVideoDTOs;
 using OnlineEdu.WebUI.Services.TokenServices;
 
 namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
@@ -27,13 +27,13 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         {
             var userId = _tokenService.GetUserId;
           
-            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses/GetCoursesByTeacherId/" + userId);
+            var values = await _client.GetFromJsonAsync<List<ResultCourseDTO>>("courses/GetCoursesByTeacherId/" + userId);
             return View(values);
         }
 
         public async Task<IActionResult> CreateCourse()
         {
-            var categoryList = await _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("courseCategories");
+            var categoryList = await _client.GetFromJsonAsync<List<ResultCourseCategoryDTO>>("courseCategories");
 
             List<SelectListItem> categories = (from x in categoryList
                                                select new SelectListItem
@@ -46,7 +46,7 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCourse(CreateCourseDto createCourseDto)
+        public async Task<IActionResult> CreateCourse(CreateCourseDTO createCourseDto)
         {
             var userId = _tokenService.GetUserId;
 
@@ -64,7 +64,7 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
 
         public async Task<IActionResult> UpdateCourse(int id)
         {
-            var categoryList = await _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("courseCategories");
+            var categoryList = await _client.GetFromJsonAsync<List<ResultCourseCategoryDTO>>("courseCategories");
 
             List<SelectListItem> categories = (from x in categoryList
                                                select new SelectListItem
@@ -73,12 +73,12 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
                                                    Value = x.CourseCategoryId.ToString()
                                                }).ToList();
             ViewBag.categories = categories;
-            var value = await _client.GetFromJsonAsync<UpdateCourseDto>("courses/" + id);
+            var value = await _client.GetFromJsonAsync<UpdateCourseDTO>("courses/" + id);
             return View(value);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateCourse(UpdateCourseDto updateCourseDto)
+        public async Task<IActionResult> UpdateCourse(UpdateCourseDTO updateCourseDto)
         {
             var userId = _tokenService.GetUserId;
             updateCourseDto.AppUserId = userId   ;
@@ -88,7 +88,7 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
 
         public async Task<IActionResult> CourseVideos(int id)
         {
-            var values = await _client.GetFromJsonAsync<List<ResultCourseVideoDto>>("courseVideos/GetCourseVideosByCourseId/" + id);
+            var values = await _client.GetFromJsonAsync<List<ResultCourseVideoDTO>>("courseVideos/GetCourseVideosByCourseId/" + id);
 
             TempData["courseId"] = id;
 
@@ -100,14 +100,14 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         public async Task<IActionResult> CreateVideo()
         {
             var courseId = (int)TempData["courseId"];
-            var course = await _client.GetFromJsonAsync<ResultCourseDto>("courses/" + courseId);
+            var course = await _client.GetFromJsonAsync<ResultCourseDTO>("courses/" + courseId);
             ViewBag.courseName = course.CourseName;
             ViewBag.courseId = course.CourseId;
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateVideo(CreateCourseVideoDto model)
+        public async Task<IActionResult> CreateVideo(CreateCourseVideoDTO model)
         {
 
             

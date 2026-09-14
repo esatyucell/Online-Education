@@ -1,7 +1,4 @@
 ﻿using OnlineEdu.WebUI.DTOs.UserDTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnlineEdu.WebUI.DTOs.TeacherSocialDTOs
 {

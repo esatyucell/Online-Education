@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OnlineEdu.WebUI.DTOs.TeacherSocialDTOs
+﻿namespace OnlineEdu.WebUI.DTOs.TeacherSocialDTOs
 {
     public class CreateTeacherSocialDTO
     {
