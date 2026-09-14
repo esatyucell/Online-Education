@@ -1,13 +1,17 @@
-﻿using System;
+﻿using OnlineEdu.WebUI.DTOs.CourseDTOs;
+using OnlineEdu.WebUI.DTOs.UserDTOs;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using OnlineEdu.WebUI.DTOs.CourseDTOs;
 
 namespace OnlineEdu.WebUI.DTOs.CourseRegisterDTOs
 {
     public class ResultCourseRegisterDTO
     {
         public int CourseRegisterId { get; set; }
+
+        public int AppUserId { get; set; }
+        public ResultUserDTO AppUser { get; set; }
 
         public int CourseId { get; set; }
 

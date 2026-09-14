@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OnlineEdu.WebUI.DTOs.CourseDtos;
-using OnlineEdu.WebUI.DTOs.CourseRegisterDtos;
-using OnlineEdu.WebUI.DTOs.CourseVideoDtos;
+using OnlineEdu.WebUI.DTOs.CourseDTOs;
+using OnlineEdu.WebUI.DTOs.CourseRegisterDTOs;
+using OnlineEdu.WebUI.DTOs.CourseVideoDTOs;
 using OnlineEdu.WebUI.Services.TokenServices;
 
 namespace OnlineEdu.WebUI.Areas.Student.Controllers
@@ -24,7 +24,7 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
         {
             var userId = _tokenService.GetUserId;
 
-            var values = await _client.GetFromJsonAsync<List<ResultCourseRegisterDto>>("courseRegisters/GetMyCourses/" + userId);
+            var values = await _client.GetFromJsonAsync<List<ResultCourseRegisterDTO>>("courseRegisters/GetMyCourses/" + userId);
 
             return View(values);
         }
@@ -32,7 +32,7 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
         [HttpGet]
         public async Task<IActionResult> RegisterCourse()
         {
-            var courseList = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses");
+            var courseList = await _client.GetFromJsonAsync<List<ResultCourseDTO>>("courses");
 
             List<SelectListItem> courses = (from x in courseList
                                select new SelectListItem
@@ -45,9 +45,9 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> RegisterCourse(CreateCourseRegisterDto model)
+        public async Task<IActionResult> RegisterCourse(CreateCourseRegisterDTO model)
         {
-            var courseList = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses");
+            var courseList = await _client.GetFromJsonAsync<List<ResultCourseDTO>>("courses");
 
             List<SelectListItem> courses = (from x in courseList
                                             select new SelectListItem
@@ -73,7 +73,7 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
 
         public async Task<IActionResult> CourseVideos(int id)
         {
-            var values = await _client.GetFromJsonAsync<List<ResultCourseVideoDto>>("courseVideos/GetCourseVideosByCourseId/" + id);
+            var values = await _client.GetFromJsonAsync<List<ResultCourseVideoDTO>>("courseVideos/GetCourseVideosByCourseId/" + id);
 
             ViewBag.courseName = values.Select(x => x.Course.CourseName).FirstOrDefault();
             return View(values);
