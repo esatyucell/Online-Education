@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
 using OnlineEdu.WebUI.Models;
+using OnlineEdu.WebUI.DTOs.TeacherSocialDTOs;
 
 namespace OnlineEdu.WebUI.Services.UserServices
 {
@@ -36,7 +37,8 @@ namespace OnlineEdu.WebUI.Services.UserServices
 
         public async Task<List<ResultUserDTO>> GetAllTeachers()
         {
-            throw new NotImplementedException();
+            var values = await _client.GetFromJsonAsync<List<ResultUserDTO>>("users/TeacherList"); // veya "teachers"
+            return values;
         }
 
         public async Task<List<UserViewModel>> GetAllUsersAsync()

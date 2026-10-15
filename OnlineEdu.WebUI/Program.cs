@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<OnlineEdu.WebUI.Services.UserServices.IUserService, OnlineEdu.WebUI.Services.UserServices.UserService>();
 
 builder.Services.AddHttpClient("EduClient", cfg =>
 {
