@@ -16,7 +16,7 @@ namespace OnlineEdu.DTO.DTOs.BlogDTOs
         public int BlogCategoryId { get; set; }
         public ResultBlogCategoryDTO BlogCategory { get; set; }
 
-        public int WriterId { get; set; }
+        public int? WriterId { get; set; }
         public AppUser Writer { get; set; }
 
 
