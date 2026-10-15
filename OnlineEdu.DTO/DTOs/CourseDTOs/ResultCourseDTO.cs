@@ -1,4 +1,5 @@
 ﻿using OnlineEdu.DTO.DTOs.CourseCategoryDTOs;
+using OnlineEdu.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,7 @@ namespace OnlineEdu.DTO.DTOs.CourseDTOs
         public decimal Price { get; set; }
         public bool IsShown { get; set; }
 
-
+        public AppUser AppUser { get; set; }
+        public int? AppUserId { get; set; }
     }
 }
