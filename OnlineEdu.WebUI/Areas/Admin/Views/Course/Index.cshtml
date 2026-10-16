@@ -1,5 +1,4 @@
 ﻿@model List<ResultCourseDTO>
-
 @{
     ViewData["Title"] = "Kurslar";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -35,7 +34,7 @@
             <td>@item.CourseName</td>
             <td>@item.Price ₺</td>
             <td>@item.CourseCategory.Name </td>
-            
+            <td>@item.AppUser.FirstName @item.AppUser.LastName </td>
             <td>@(item.IsShown ? "Gösteriliyor" : "Gösterilmiyor") </td>
             <td>
                 <button onclick="deleteCourse(@item.CourseId)" class="btn btn-outline-danger">Sil</button>
@@ -81,3 +80,5 @@
     }
 
 </script>
+
+

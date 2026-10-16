@@ -15,48 +15,72 @@ namespace OnlineEdu.WebUI.Controllers
     {
         private readonly HttpClient _client;
 
-        //named client 
-     
         public LoginController(IHttpClientFactory clientFactory)
         {
             _client = clientFactory.CreateClient("EduClient");
         }
+
+        [HttpGet]
         public IActionResult SignIn()
         {
-            return View();
+            return View(new UserLoginDTO());
         }
 
         [HttpPost]
         public async Task<IActionResult> SignIn(UserLoginDTO userLoginDto)
         {
-            var result = await _client.PostAsJsonAsync("users/login", userLoginDto);
-            if (!result.IsSuccessStatusCode)
+            if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", "Kullanıcı Adı veya Şifre Hatalı");
                 return View(userLoginDto);
             }
 
-            var handler = new JwtSecurityTokenHandler();
-            var response = await result.Content.ReadFromJsonAsync<LoginResponseDTO>();
-            var token = handler.ReadJwtToken(response.Token);
-            var claims =token.Claims.ToList();
+            var result = await _client.PostAsJsonAsync("Users/login", userLoginDto);
 
-            if(response.Token != null)
+            if (!result.IsSuccessStatusCode)
             {
-                claims.Add(new Claim("Token", response.Token));
-                var claimsIdentity = new ClaimsIdentity(claims,JwtBearerDefaults.AuthenticationScheme);
-                var authProps = new AuthenticationProperties
-                {
-                    ExpiresUtc = response.ExpireDate,
-                    IsPersistent = true
-                };
+                // API'nin neden reddettiğini görelim
+                var errorMessage = await result.Content.ReadAsStringAsync();
 
-                await HttpContext.SignInAsync(JwtBearerDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity),authProps);
-
-                return RedirectToAction("Index", "Home");
+                ModelState.AddModelError("", $"HATA KODU: {result.StatusCode} | DETAY: {errorMessage}");
+                return View(userLoginDto);
             }
-            ModelState.AddModelError("", "Kullanıcı Adı veya Şifre Hatalı");
-            return View(userLoginDto);
+
+            try
+            {
+                var response = await result.Content.ReadFromJsonAsync<LoginResponseDTO>();
+
+                if (response != null && !string.IsNullOrEmpty(response.Token))
+                {
+                    var handler = new JwtSecurityTokenHandler();
+                    var token = handler.ReadJwtToken(response.Token);
+                    var claims = token.Claims.ToList();
+
+                    claims.Add(new Claim("Token", response.Token));
+
+                    var claimsIdentity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
+                    var authProps = new AuthenticationProperties
+                    {
+                        ExpiresUtc = response.ExpireDate,
+                        IsPersistent = true
+                    };
+
+                    await HttpContext.SignInAsync(
+                        JwtBearerDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(claimsIdentity),
+                        authProps
+                    );
+
+                    return RedirectToAction("Index", "Home");
+                }
+
+                ModelState.AddModelError("", "Kullanıcı Adı veya Şifre Hatalı");
+                return View(userLoginDto);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Giriş yapılırken beklenmeyen bir hata oluştu.");
+                return View(userLoginDto);
+            }
         }
 
         public async Task<IActionResult> Logout()

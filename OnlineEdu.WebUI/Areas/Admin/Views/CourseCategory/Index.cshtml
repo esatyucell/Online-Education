@@ -1,4 +1,5 @@
-﻿@model List<ResultCourseCategoryDTO>
+﻿
+@model List<ResultCourseCategoryDTO>
 @{
     ViewData["Title"] = "Kurs Kategorileri";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -11,15 +12,15 @@
 <table class="table table-hover">
 
     <tr>
-
+       
         <th>#</th>
         <th>Kurs Kategori Adı</th>
         <th>Açıklama</th>
         <th>Gösterilme Durumu</th>
 
         <th></th>
-        <th>Ana Sayfada</th>
-
+<th>Ana Sayfada</th>
+   
     </tr>
 
     @foreach (var item in Model)
@@ -29,12 +30,12 @@
             <th>@count</th>
             <td>@item.Name</td>
             <td>@item.Description</td>
-            <td>@(item.IsShown ? "Gösteriliyor" : "Gösterilmiyor") </td>
+            <td>@(item.IsShown ? "Gösteriliyor":"Gösterilmiyor") </td>
             <td>
                 <button onclick="deleteCourseCategory(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil</button>
                 <a asp-action="UpdateCourseCategory" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-info">Güncelle</a>
-
               
+
 
             </td>
             <td>
@@ -74,3 +75,4 @@
     }
 
 </script>
+

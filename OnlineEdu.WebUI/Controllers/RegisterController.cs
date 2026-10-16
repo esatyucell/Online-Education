@@ -21,24 +21,29 @@ namespace OnlineEdu.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Signup(UserRegisterDTO userRegisterDto)
         {
-            var result = await _client.PostAsJsonAsync("users/register", userRegisterDto);
-
+            // 1. Önce model geçerliliğini kontrol et (API'ye boş istek gitmesini engeller)
             if (!ModelState.IsValid)
             {
                 return View(userRegisterDto);
             }
 
+            // 2. Model geçerliyse API'ye istek at
+            var result = await _client.PostAsJsonAsync("users/register", userRegisterDto);
+
             if (!result.IsSuccessStatusCode)
             {
                 var errors = await result.Content.ReadFromJsonAsync<List<RegisterResponseDTO>>();
 
-                foreach (var item in errors )
+                if (errors != null)
                 {
-                    ModelState.AddModelError("", item.Description);
+                    foreach (var item in errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
                 }
                 return View(userRegisterDto);
             }
-           
+
             return RedirectToAction("SignIn", "Login");
         }
     }

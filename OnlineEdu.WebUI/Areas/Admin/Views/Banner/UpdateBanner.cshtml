@@ -1,5 +1,4 @@
 ﻿@model UpdateBannerDTO
-
 @{
     ViewData["Title"] = "Banner Güncelleme Sayfası";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -7,11 +6,12 @@
 
 <form method="post">
     <input type="hidden" asp-for="BannerId" />
-    <label>Açıklama</label>
-    <textarea asp-for="Title" class="form-control" rows="5"></textarea>
-    <br />
-    <label>Resim Url 1</label>
+    <label>Resim Url</label>
     <input type="text" asp-for="ImageUrl" class="form-control" />
     <br />
-    <button class="btn btn-outline-primary">Kaydet</button>
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
 </form>
+

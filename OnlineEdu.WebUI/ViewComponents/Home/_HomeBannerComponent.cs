@@ -7,15 +7,24 @@ namespace OnlineEdu.WebUI.ViewComponents.Home
     {
         private readonly HttpClient _client;
 
-        public _HomeBannerComponent (IHttpClientFactory clientFactory)
+        public _HomeBannerComponent(IHttpClientFactory clientFactory)
         {
             _client = clientFactory.CreateClient("EduClient");
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var banner = await _client.GetFromJsonAsync<List<ResultBannerDTO>>("banners");
-            return View(banner);
+            // URL'nin başına "api/" eklendi
+            var responseMessage = await _client.GetAsync("api/banners");
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var values = await responseMessage.Content.ReadFromJsonAsync<List<ResultBannerDTO>>();
+                return View(values);
+            }
+
+            // Hata durumunda sayfanın çökmesini engellemek için boş liste dönüyoruz
+            return View(new List<ResultBannerDTO>());
         }
     }
 }
