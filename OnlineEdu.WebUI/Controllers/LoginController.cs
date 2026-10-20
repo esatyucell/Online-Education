@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Protocol;
 using OnlineEdu.WebUI.DTOs.LoginDTOs;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
-using OnlineEdu.WebUI.Helpers;
-using OnlineEdu.WebUI.Services.UserServices;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
@@ -38,10 +35,7 @@ namespace OnlineEdu.WebUI.Controllers
 
             if (!result.IsSuccessStatusCode)
             {
-                // API'nin neden reddettiğini görelim
-                var errorMessage = await result.Content.ReadAsStringAsync();
-
-                ModelState.AddModelError("", $"HATA KODU: {result.StatusCode} | DETAY: {errorMessage}");
+                ModelState.AddModelError("", "Kullanıcı Adı veya Şifre Hatalı");
                 return View(userLoginDto);
             }
 
@@ -53,19 +47,38 @@ namespace OnlineEdu.WebUI.Controllers
                 {
                     var handler = new JwtSecurityTokenHandler();
                     var token = handler.ReadJwtToken(response.Token);
-                    var claims = token.Claims.ToList();
 
-                    claims.Add(new Claim("Token", response.Token));
+                    // 🚀 DÜZELTME BURADA: Sadece ihtiyacımız olan "Temiz" verileri seçiyoruz.
+                    // JWT'nin kendi içindeki exp (tarih) gibi sistemi kitleyen verileri süzdük.
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, token.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value ?? ""),
+                        new Claim(ClaimTypes.Name, token.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value ?? ""),
+                        new Claim(ClaimTypes.Email, token.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value ?? ""),
+                        new Claim("fullName", token.Claims.FirstOrDefault(x => x.Type == "fullName")?.Value ?? ""),
+                        new Claim("Token", response.Token)
+                    };
 
-                    var claimsIdentity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
+                    // Varsa kullanıcı rollerini de ekliyoruz
+                    var roles = token.Claims.Where(x => x.Type == ClaimTypes.Role).ToList();
+                    claims.AddRange(roles);
+
+                    // .NET'e spesifik olarak "İsim ve Rol için bu tiplere bakacaksın" diyoruz
+                    var claimsIdentity = new ClaimsIdentity(
+                        claims,
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        ClaimTypes.Name,
+                        ClaimTypes.Role
+                    );
+
                     var authProps = new AuthenticationProperties
                     {
-                        ExpiresUtc = response.ExpireDate,
-                        IsPersistent = true
+                        IsPersistent = true,
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddDays(5)
                     };
 
                     await HttpContext.SignInAsync(
-                        JwtBearerDefaults.AuthenticationScheme,
+                        CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(claimsIdentity),
                         authProps
                     );
@@ -85,7 +98,7 @@ namespace OnlineEdu.WebUI.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
     }
