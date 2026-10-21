@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
 using OnlineEdu.WebUI.Models;
-using OnlineEdu.WebUI.DTOs.TeacherSocialDTOs;
+using System.Net.Http.Json;
+using System.Net.Http;
 
 namespace OnlineEdu.WebUI.Services.UserServices
 {
@@ -14,16 +15,17 @@ namespace OnlineEdu.WebUI.Services.UserServices
             _client = clientFactory.CreateClient("EduClient");
         }
 
-        public async Task<bool> AssignRoleAsync(List<AssignRoleDTO> assignRoleDTO)
-        {
-            throw new NotImplementedException();
-        }
-        public Task<bool> CreateRoleAsync(UserRoleDTO userRoleDTO)
+        public async Task<bool> AssignRoleAsync(List<AssignRoleDTO> assignRoleDto)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IdentityResult> CreateUserAsync(UserRegisterDTO userRegisterDTO)
+        public Task<bool> CreateRoleAsync(UserRoleDTO userRoleDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IdentityResult> CreateUserAsync(UserRegisterDTO userRegisterDto)
         {
             throw new NotImplementedException();
         }
@@ -37,8 +39,7 @@ namespace OnlineEdu.WebUI.Services.UserServices
 
         public async Task<List<ResultUserDTO>> GetAllTeachers()
         {
-            var values = await _client.GetFromJsonAsync<List<ResultUserDTO>>("users/TeacherList"); // veya "teachers"
-            return values;
+            throw new NotImplementedException();
         }
 
         public async Task<List<UserViewModel>> GetAllUsersAsync()
@@ -58,15 +59,21 @@ namespace OnlineEdu.WebUI.Services.UserServices
             return await _client.GetFromJsonAsync<List<AssignRoleDTO>>("roleAssigns/" + id);
         }
 
-        public async Task<string> LoginAsync(UserLoginDTO userLoginDTO)
+        public async Task<string> LoginAsync(UserLoginDTO userLoginDto)
         {
             throw new NotImplementedException();
+
+
+
+
+
+
+
         }
 
         public async Task LogoutAsync()
         {
             throw new NotImplementedException();
         }
-
     }
 }

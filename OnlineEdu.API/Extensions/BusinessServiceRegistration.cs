@@ -27,7 +27,7 @@ namespace OnlineEdu.API.Extensions
             services.AddScoped<ISocialMediaService, SocialMediaManager>();
             services.AddScoped<ISubscriberService, SubscriberManager>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
-
+            services.AddScoped<IUserService, UserService>();
             // Blog & Course (Sadece Repolar ve Servisler - Çift yazılanlar temizlendi)
             services.AddScoped<IBlogCategoryRepository, BlogCategoryRepository>();
             services.AddScoped<IBlogCategoryService, BlogCategoryManager>();

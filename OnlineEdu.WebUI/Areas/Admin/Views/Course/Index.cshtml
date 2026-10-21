@@ -4,62 +4,63 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
 @{
     int count = 0;
 }
+
 <table class="table table-hover">
-
-    <tr>
-
-        <th>#</th>
-        <th>Resim</th>
-        <th>Kurs Adı</th>
-        <th>Fiyat</th>
-        <th>Kategori</th>
-        <th>Eğitmen</th>
-        <th>Gösterilme Durumu</th>
-
-        <th></th>
-        <th>Ana Sayfada</th>
-
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        count++;
+    <thead>
         <tr>
-            <th>@count</th>
-            <th><img src="@item.ImageUrl" style="height:75px;width:75px" /></th>
-            <td>@item.CourseName</td>
-            <td>@item.Price ₺</td>
-            <td>@item.CourseCategory.Name </td>
-            <td>@item.AppUser.FirstName @item.AppUser.LastName </td>
-            <td>@(item.IsShown ? "Gösteriliyor" : "Gösterilmiyor") </td>
-            <td>
-                <button onclick="deleteCourse(@item.CourseId)" class="btn btn-outline-danger">Sil</button>
-                <a asp-action="UpdateCourse" asp-controller="Course" asp-area="Admin" asp-route-id="@item.CourseId" class="btn btn-outline-info">Güncelle</a>
-
-
-
-            </td>
-            <td>
-                <a asp-action="ShowOnHome" asp-controller="Course" asp-area="Admin" asp-route-id="@item.CourseId" class="btn btn-outline-success"> Göster</a>
-                <a asp-action="DontShowOnHome" asp-controller="Course" asp-area="Admin" asp-route-id="@item.CourseId" class="btn btn-outline-secondary"> Gösterme</a>
-            </td>
+            <th>#</th>
+            <th>Resim</th>
+            <th>Kurs Adı</th>
+            <th>Fiyat</th>
+            <th>Kategori</th>
+            <th>Eğitmen</th>
+            <th>Gösterilme Durumu</th>
+            <th>İşlemler</th>
+            <th>Ana Sayfada</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td><img src="@item.ImageUrl" style="height:75px;width:75px;object-fit:cover;" /></td>
+                    <td>@item.CourseName</td>
+                    <td>@item.Price ₺</td>
+                    <td>@(item.CourseCategory?.Name ?? "Kategori Yok")</td>
+                    <td>@(item.AppUser != null ? $"{item.AppUser.FirstName} {item.AppUser.LastName}" : "Eğitmen Atanmadı")</td>
+                    <td>@(item.IsShown ? "Gösteriliyor" : "Gösterilmiyor")</td>
+                    <td>
+                        <button onclick="deleteCourse(@item.CourseId)" class="btn btn-outline-danger">Sil</button>
+                        <a asp-action="UpdateCourse" asp-controller="Course" asp-area="Admin" asp-route-id="@item.CourseId" class="btn btn-outline-info">Güncelle</a>
+                    </td>
+                    <td>
+                        <a asp-action="ShowOnHome" asp-controller="Course" asp-area="Admin" asp-route-id="@item.CourseId" class="btn btn-outline-success">Göster</a>
+                        <a asp-action="DontShowOnHome" asp-controller="Course" asp-area="Admin" asp-route-id="@item.CourseId" class="btn btn-outline-secondary">Gösterme</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center text-muted">Listelenecek kurs bulunamadı.</td>
+            </tr>
+        }
+    </tbody>
 </table>
 
 <br />
 <a asp-action="CreateCourse" asp-controller="Course" asp-area="Admin" class="btn btn-outline-primary">Yeni Kurs Ekle</a>
 
 <script>
-
     function deleteCourse(id) {
-
-
-
         Swal.fire({
             title: "Silmek istediğinize emin misiniz?",
             text: "Bu işlemi geri alamazsınız!",
@@ -71,14 +72,8 @@
             cancelButtonText: "İptal"
         }).then((result) => {
             if (result.isConfirmed) {
-
                 window.location.href = "/Admin/Course/DeleteCourse/" + id;
-
             }
         });
-
     }
-
 </script>
-
-

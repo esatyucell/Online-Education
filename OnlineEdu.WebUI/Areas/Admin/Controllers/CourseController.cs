@@ -33,7 +33,7 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var values = await _client.GetFromJsonAsync<List<ResultCourseDTO>>("courses");
-            return View(values);
+            return View(values ?? new List<ResultCourseDTO>());
         }
 
         public async Task<IActionResult> DeleteCourse(int id)

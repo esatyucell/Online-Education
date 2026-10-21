@@ -15,7 +15,7 @@ namespace OnlineEdu.WebUI.ViewComponents.Home
         public async Task<IViewComponentResult> InvokeAsync()
         {
             // URL'nin başına "api/" eklendi
-            var responseMessage = await _client.GetAsync("api/banners");
+            var responseMessage = await _client.GetAsync("banners");
 
             if (responseMessage.IsSuccessStatusCode)
             {
