@@ -4,19 +4,107 @@
     Layout = "~/Views/UILayout/Layout.cshtml";
 }
 
+<!-- SADE, KESKİN VE MİNİMALİST KART STİLLERİ -->
+<style>
+    .course-card {
+        background: #ffffff;
+        border: 1px solid #E5E7EB; /* Keskin ve ince çerçeve */
+        border-radius: 0; /* Yuvarlak hatlar iptal, tam köşeli */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        /* Gölge ve hover (hareket) efektleri tamamen kaldırıldı */
+    }
 
+    .course-img-wrapper {
+        height: 240px; /* Görsel alanı biraz daha büyütüldü */
+        width: 100%;
+        border-bottom: 1px solid #E5E7EB; /* Resim ile içerik arasına keskin çizgi */
+    }
+
+        .course-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .course-content {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .course-category-badge {
+        color: #0A58CA;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        align-self: flex-start;
+        /* Arka plan rengi kaldırıldı, sadece sade metin yapıldı */
+    }
+
+    .course-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #111827; /* Çok net bir siyah */
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+        .course-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+            .course-title a:hover {
+                text-decoration: underline; /* Hover olunca sadece altı çizilsin (Sade) */
+            }
+
+    .course-footer {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid #E5E7EB; /* En alt kısımda keskin ayıraç çizgisi */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .course-price {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #111827; /* Fiyat da sade ve net siyah yapıldı */
+    }
+
+    /* BÜYÜTÜLMÜŞ, KESKİN İNCELE BUTONU */
+    .btn-incele {
+        padding: 10px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0; /* Köşeli, net buton */
+        border: 2px solid #0A58CA;
+        background-color: transparent;
+        color: #0A58CA;
+        transition: all 0.2s;
+    }
+
+        .btn-incele:hover {
+            background-color: #0A58CA;
+            color: #ffffff;
+        }
+</style>
 
 <main>
-    <!--? Hero Start -->
+    <!-- Hero Start -->
     <div class="slider-area ">
         <div class="slider-height2 d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-
                             <h2>Tüm Kurslar</h2>
-
                         </div>
                     </div>
                 </div>
@@ -28,52 +116,44 @@
     <section class="all-course section-padding30">
         <div class="container">
             <div class="row">
-                <div class="all-course-wrapper">
-                    <!-- Heading & Nav Button -->
-                    <!-- Tab content -->
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Nav Card -->
-                            <div class="tab-content" id="nav-tabContent">
-                                <!--  one -->
-
-
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                    <div class="row">
-                                        @foreach (var course in Model)
-                                        {
-                                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                                <!-- Single course -->
-                                                <div class="single-course mb-70">
-                                                    <div class="course-img">
-                                                        <img src="@course.ImageUrl" alt="">
-                                                    </div>
-                                                    <div class="course-caption">
-                                                        <div class="course-cap-top">
-                                                            <h4><a href="#">@course.CourseName</a></h4>
-                                                        </div>
-                                                        <div class="course-cap-mid d-flex justify-content-between">
-
-                                                            <ul><li>@course.CourseCategory.Name</li></ul>
-                                                        </div>
-                                                        <div class="course-cap-bottom d-flex justify-content-between">
-
-                                                            <span>@course.Price ₺</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        }
-
-                                    </div>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var course in Model)
+                    {
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-5">
+                            <!-- Keskin Hatlı Single Course -->
+                            <div class="course-card">
+                                <div class="course-img-wrapper">
+                                    <img src="@course.ImageUrl" alt="@course.CourseName">
                                 </div>
 
+                                <div class="course-content">
+                                    <!-- Kategori -->
+                                    <span class="course-category-badge">
+                                        @(course.CourseCategory?.Name ?? "Kategori Belirtilmedi")
+                                    </span>
 
+                                    <!-- Kurs Başlığı -->
+                                    <h4 class="course-title">
+                                        <a href="#">@course.CourseName</a>
+                                    </h4>
+
+                                    <!-- Fiyat ve Büyük İncele Butonu -->
+                                    <div class="course-footer">
+                                        <span class="course-price">@course.Price ₺</span>
+                                        <a href="#" class="btn-incele">İncele</a>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- End Nav Card -->
                         </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12 text-center py-5">
+                        <h4 class="text-muted" style="font-weight:400;">Şu an gösterilecek herhangi bir kurs bulunmuyor.</h4>
                     </div>
-                </div>
+                }
             </div>
         </div>
     </section>

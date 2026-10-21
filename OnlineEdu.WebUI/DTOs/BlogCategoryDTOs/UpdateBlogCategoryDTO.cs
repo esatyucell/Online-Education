@@ -9,7 +9,10 @@ namespace OnlineEdu.WebUI.DTOs.BlogCategoryDTOs
 {
     public class UpdateBlogCategoryDTO
     {
-        public int BlogCategoryId { get; set; }
+        public int CourseCategoryId { get; set; }
         public string Name { get; set; }
+        public string Icon { get; set; }
+        public string Description { get; set; }
+        public bool IsShown { get; set; }
     }
 }

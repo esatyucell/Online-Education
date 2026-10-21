@@ -39,7 +39,15 @@ namespace OnlineEdu.WebUI.Services.UserServices
 
         public async Task<List<ResultUserDTO>> GetAllTeachers()
         {
-            throw new NotImplementedException();
+            try
+            {
+                // 🚀 DÜZELTME: API'deki [HttpGet("TeacherList")] uç noktasına gidiyoruz
+                return await _client.GetFromJsonAsync<List<ResultUserDTO>>("Users/TeacherList");
+            }
+            catch (Exception)
+            {
+                return new List<ResultUserDTO>();
+            }
         }
 
         public async Task<List<UserViewModel>> GetAllUsersAsync()

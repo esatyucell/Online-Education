@@ -14,6 +14,6 @@ namespace OnlineEdu.DTO.DTOs.CourseDTOs
         public decimal Price { get; set; }
         public bool IsShown { get; set; }
 
-        public int AppUserId { get; set; }
+        public int? AppUserId { get; set; }
     }
 }
